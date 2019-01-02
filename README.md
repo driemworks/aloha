@@ -14,7 +14,7 @@ The generated username and the bridge's ip address are stored in `bridge-data.js
 }
 ```
 # Usage
-To start the client, run ```bash node aloha.js```. This will monitor if your authorized devices are connecting or disconnecting from the wifi network. Arrival behavior is managed on a per user basis. 
+To start the client, run ``` node aloha.js```. This will monitor if your authorized devices are connecting or disconnecting from the wifi network. Arrival behavior is managed on a per user basis. 
 
 Authorized users can be managed in `hosts.json`, where each entry contains an ip address, a name, and a list of allowed lights.
 Ex: 
@@ -22,7 +22,7 @@ Ex:
 [
     {
         "ip": "192.168.1.xxx",
-        "name": "Tony",
+        "name": "username",
         "allowedLights": [1, 4]
     }
 ]
@@ -42,10 +42,7 @@ For example, the below configuration would lead to lamp 1 being turned to red wh
                 }
             }
         }
-    },
-    "user2": {
-        ...
-    }, ...
+    }
 }
 ```
 Refer to the json files in the config folder for examples.
