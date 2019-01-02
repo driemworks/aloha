@@ -1,6 +1,7 @@
 # Aloha
 ![license](https://img.shields.io/hexpm/l/plug.svg)
-Aloha is a home automation tool to turn on phillips hue devices when you arrive home, and to turn them off when you leave. No scheduled routines or human intervention required.
+
+Aloha is a home automation tool to turn on phillips hue devices when you arrive home, and to turn them off when you leave. No scheduled routines or human intervention required. At the moment it is really just a proof of concept. 
 
 # Getting Started
 Before development, make sure that your phillips hue lights and bridge are functioning properly and that you're on the same wifi network.
