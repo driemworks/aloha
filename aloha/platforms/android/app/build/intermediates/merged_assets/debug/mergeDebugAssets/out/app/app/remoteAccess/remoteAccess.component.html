@@ -1,0 +1,8 @@
+<StackLayout>
+    <div *ngIf="showWebview">
+            <WebView row="1" #webView [src]="authorizationUrl" loadStarted="onLoadStarted"></WebView>
+    </div>
+    <div *ngIf="!showWebview">
+        <Button text="Done" [nsRouterLink]="['/home']"></Button>
+    </div>
+</StackLayout>

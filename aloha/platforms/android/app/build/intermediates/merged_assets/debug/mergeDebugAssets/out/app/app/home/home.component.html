@@ -1,0 +1,25 @@
+<StackLayout>
+    <div *ngIf="wifiStatus===1 || wifiStatus===3;else no_connection" >
+        <div *ngIf="!user.username">
+            <Button text="Create User" [nsRouterLink]="['/user']" pageTransition="slide"></Button>
+        </div>
+        <div *ngIf="!user.accessToken">
+                <Button text="Authorize Remote Access" [nsRouterLink]="['/remote-access']"></Button>
+        </div>
+        <div *ngIf="user.username">
+                <Label text="Hello user: {{ user.username }}"></Label>
+                <div *ngIf="(wifiStatus === 1 || wifiStatus === 3)">
+                    <Label text="Welcome Home!"></Label>
+                    <Label text="Lights are on."></Label>
+                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                </div>
+                <div *ngIf="wifiStatus != 1 && wifiStatus != 3">
+                        <Label text="Good bye!"></Label>
+                        <Label text="Lights are off."></Label>
+                </div>
+        </div>
+        <ng-template #no_connection>
+            You must be connected to a wifi network.
+        </ng-template>
+    </div>
+</StackLayout>

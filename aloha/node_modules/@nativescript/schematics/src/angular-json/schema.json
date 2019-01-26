@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsNgCliConfig",
+  "title": "NG CLI Config Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Specifies the name of the project."
+    },
+    "path": {
+      "type": "string",
+      "description": "Specifies the destination path.",
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The prefix to apply to generated selectors.",
+      "default": "app"
+    },
+    "sourceRoot": {
+      "type": "string",
+      "description": "The source root folder to be used in the generated angular project",
+      "default": "."
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

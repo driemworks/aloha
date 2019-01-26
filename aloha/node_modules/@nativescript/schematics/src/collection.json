@@ -1,0 +1,125 @@
+{
+  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+
+  "schematics": {
+    "ng-new": {
+      "factory": "./ng-new",
+      "description": "Create a new NativeScript Angular application.",
+      "schema": "./ng-new/schema.json"
+    },
+    "application": {
+      "factory": "./ng-new/application",
+      "description": "Create a new NativeScript Angular application.",
+      "schema": "./ng-new/application/schema.json"
+    },
+    "shared": {
+      "factory": "./ng-new/shared",
+      "description": "Create a shared mobile-web Angular NativeScript application.",
+      "schema": "./ng-new/shared/schema.json"
+    },
+    "angular-json": {
+      "description": "Adds angular.json to a {N} project.",
+      "factory": "./angular-json",
+      "schema": "./angular-json/schema.json"
+    },
+
+    "component": {
+      "aliases": [ "c" ],
+      "factory": "./generate/component",
+      "description": "Create an Angular component.",
+      "schema": "./generate/component/schema.json"
+    },
+
+    "module": {
+        "aliases": ["m"],
+        "factory": "./generate/module",
+        "description": "Create an Angular module",
+        "schema": "./generate/module/schema.json"
+    },
+
+    "app-resources": {
+        "factory": "./app-resources",
+        "description": "Create App Resources",
+        "schema": "./app-resources/schema.json"
+    },
+
+    "styling": {
+        "factory": "./styling",
+        "description": "Create styling files",
+        "schema": "./styling/schema.json"
+    },
+
+    "add-ns": {
+      "factory": "./add-ns",
+      "description": "Migrates an ng web project to a code sharing project structure, by adding {N}",
+      "schema": "./add-ns/schema.json"
+    },
+
+    "ng-add": {
+      "factory": "./add-ns",
+      "description": "Adds NativeScript to a web project, turning it into a code sharing project with build targets for Web, Androind and iOS",
+      "schema": "./add-ns/schema.json"
+    },
+
+    "refactor-nsng-modules": {
+        "factory": "./refactor-nsng-modules",
+        "description": "Upgrades existing {N} Angular projects.",
+        "schema": "./refactor-nsng-modules/schema.json"
+    },
+
+    "class": {
+      "aliases": [ "cl" ],
+      "extends": "@schematics/angular:class"
+    },
+
+    "directive": {
+      "aliases": [ "d" ],
+      "extends": "@schematics/angular:directive"
+    },
+
+    "enum": {
+      "aliases": [ "e" ],
+      "extends": "@schematics/angular:enum"
+    },
+
+    "guard": {
+      "aliases": [ "g" ],
+      "extends": "@schematics/angular:guard"
+    },
+
+    "interface": {
+      "aliases": [ "i" ],
+      "extends": "@schematics/angular:interface"
+    },
+
+    "pipe": {
+      "aliases": [ "p" ],
+      "extends": "@schematics/angular:pipe"
+    },
+
+    "service": {
+      "aliases": [ "s" ],
+      "extends": "@schematics/angular:service"
+    },
+
+    "migrate-component": {
+      "aliases": [ "mc"],
+      "description": "Converts a component into a code sharing component",
+      "factory": "./migrate-component",
+      "schema": "./migrate-component/schema.json"
+    },
+    "migrate-module": {
+      "aliases": [ "mg" ],
+      "description": "Converts a module into a code sharing module",
+      "factory": "./migrate-module",
+      "schema": "./migrate-module/schema.json"
+    },
+
+    "master-detail": {
+      "aliases": [ "md" ],
+      "description": "A master-detail template.",
+      "factory": "./generate-template/master-detail",
+      "schema": "./generate-template/master-detail/schema.json"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsNativeScriptAngularApplication",
+  "title": "NativeScript Angular Application Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the app.",
+      "alias": "n"
+    },
+    "sourceDir": {
+      "type": "string",
+      "description": "The path of the source directory.",
+      "default": "app"
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The prefix to apply to generated selectors.",
+      "default": "app",
+      "alias": "p"
+    },
+    "style": {
+      "type": "string",
+      "enum": [
+        "css",
+        "scss"
+      ],
+      "description": "The file extension to be used for style files. Supported are css and scss",
+      "default": "css"
+    },
+    "theme": {
+      "type": "boolean",
+      "description": "Specifies whether the {N} theme for styling should be included.",
+      "default": true
+    },
+    "webpack": {
+      "type": "boolean",
+      "description": "Specifies whether the new application has webpack set up.",
+      "default": true
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "additionalProperties": true
+}

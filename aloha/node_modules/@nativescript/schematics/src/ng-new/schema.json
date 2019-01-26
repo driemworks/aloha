@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsNativeScriptAngularNgNew",
+  "title": "NativeScript Angular ng-new Options Schema",
+  "type": "object",
+  "properties": {
+    "shared": {
+      "type": "boolean",
+      "description": "Specifies whether to generate a shared project or a {N} only",
+      "default": false
+    },
+
+    "name": {
+      "type": "string",
+      "description": "The name of the app.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "sourceDir": {
+      "type": "string",
+      "description": "The path of the source directory.",
+      "alias": "sd"
+    },
+    "prefix": {
+      "type": "string",
+      "description": "The prefix to apply to generated selectors.",
+      "default": "app",
+      "alias": "p"
+    },
+    "style": {
+      "type": "string",
+      "enum": [
+        "css",
+        "scss"
+      ],
+      "description": "The file extension to be used for style files. Supported are css and scss",
+      "default": "css"
+    },
+    "theme": {
+      "type": "boolean",
+      "description": "Specifies whether the {N} theme for styling should be included.",
+      "default": true
+    },
+    "webpack": {
+      "type": "boolean",
+      "description": "Specifies whether the new application has webpack set up.",
+      "default": true
+    },
+    "sample": {
+      "type": "boolean",
+      "description": "Specifies whether a sample master detail should be generated.",
+      "default": false
+    }
+  },
+  "required": [
+  ]
+}
