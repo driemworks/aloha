@@ -1,4 +1,4 @@
-## UNDER CONSTRUCTION
+## This version of "Aloha" is built to run as a standalone web application. For the mobile version see the master branch.
 
 # Aloha
 ![license](https://img.shields.io/hexpm/l/plug.svg)
