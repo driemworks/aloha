@@ -1,0 +1,16 @@
+.header-label {
+    background: green;
+    height: 100px;
+    color: rgba(48, 47, 47, 0.384);
+    font-size: 30px;
+    font-family: "San Francisco Pro Text";
+    text-align: center;
+}
+
+.header-label-connected {
+    background: mediumspringgreen;
+}
+
+.header-label-not-connected {
+    background: red;
+}

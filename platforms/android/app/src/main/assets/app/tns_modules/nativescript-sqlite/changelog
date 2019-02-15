@@ -1,0 +1,28 @@
+Changelog
+
+v1.0.8  - Fix for iOS Column names, Android allow copy from sub-directory
+v1.0.9  - Adding Transaction support
+v1.0.10 - Fixed docs
+v1.1.2  - Fixed ios xCode 8 issues
+v1.1.3  - Updated iOS demo and fixes for Webpack
+v1.1.4  - Adding iosFlags & androidFlags ability to be passed in as the options.
+v1.1.6  - Added blog support in iOS version
+v1.1.7  - Missed one of the iOS blob support
+v1.1.8  - Commercial Only changes
+v1.1.9  - Fix for Promise and version() function
+v1.1.10 - Fix for iOS int truncation
+v1.1.11 - Fix for Documentation and Package.json (no plugin changes)
+
+v2.0.0  - Allowed sqlite plugin to have plugins.   New version now supports a fairly extensible interface to allow the optional
+        - commercial, encryption, multitasking support to be loaded at the time you load the sqlite library.  Everything is now totally
+        - automatic; and has full support for Transactions, Prepared statements, and Encryption.
+v2.0.1  - Fix for opening database issue, now supports flags properly.
+v2.1.0  - make plugin system more webpackable.
+v2.2.0  - Fix an iOS insert/update corruption issue.  Several commercial diagnostic enhancements.
+v2.2.1  - Fix an iOS issue; 32 bit library wasn't built into new framework.  Upgrade to NS 4.x for demo
+v2.2.2  - Fix an iOS issue; dbname could be deallocatd by runtime/objc marshalling - Thanks Martin Bektchiev!
+v2.2.3  - Fix SQLite ReadOnly bitmask flag on iOS - Thanks Eduardo Speroni!
+v2.2.4  - Fix CopyDatabase on Android to respect the app version (for livesync) - Thanks Webleaf
+v2.2.5  - Fix CopyDatabase indexOf to lastIndexOf - Thanks Webleaf
+v2.2.6  - Forgot to include the ios sqlite helper in v2.2.4/v2.2.5
+v2.3.0  - Several minor issues fixed, Multi-threading added to Sqlite

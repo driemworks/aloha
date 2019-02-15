@@ -1,4 +1,0 @@
-#Sat Jan 26 14:26:52 EST 2019
-base.0=D\:\\work\\aloha\\aloha\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-renamed.0=classes.dex
-path.0=classes.dex

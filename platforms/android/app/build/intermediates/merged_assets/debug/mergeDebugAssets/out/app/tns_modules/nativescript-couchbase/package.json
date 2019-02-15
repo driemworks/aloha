@@ -1,0 +1,82 @@
+{
+  "_args": [
+    [
+      "nativescript-couchbase@1.0.18",
+      "D:\\work\\aloha\\aloha"
+    ]
+  ],
+  "_from": "nativescript-couchbase@1.0.18",
+  "_id": "nativescript-couchbase@1.0.18",
+  "_inBundle": false,
+  "_integrity": "sha1-a4wxgZzLT3V+YcIZzzyiyYFIphc=",
+  "_location": "/nativescript-couchbase",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "nativescript-couchbase@1.0.18",
+    "name": "nativescript-couchbase",
+    "escapedName": "nativescript-couchbase",
+    "rawSpec": "1.0.18",
+    "saveSpec": null,
+    "fetchSpec": "1.0.18"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-couchbase/-/nativescript-couchbase-1.0.18.tgz",
+  "_spec": "1.0.18",
+  "_where": "D:\\work\\aloha\\aloha",
+  "author": {
+    "name": "Nic Raboy",
+    "url": "https://www.thepolyglotdeveloper.com"
+  },
+  "bugs": {
+    "url": "https://github.com/couchbaselabs/nativescript-couchbase/issues"
+  },
+  "description": "Couchbase Lite plugin for Telerik NativeScript",
+  "devDependencies": {
+    "tns-core-modules": "^3.0.0",
+    "tns-platform-declarations": "^3.0.0",
+    "typescript": "^2.2.2"
+  },
+  "homepage": "https://github.com/couchbaselabs/nativescript-couchbase#readme",
+  "keywords": [
+    "couchbase",
+    "couchbase mobile",
+    "couchbase lite",
+    "nosql",
+    "nativescript"
+  ],
+  "license": "Apache-2.0",
+  "main": "couchbase",
+  "name": "nativescript-couchbase",
+  "nativescript": {
+    "platforms": {
+      "android": "3.0.0",
+      "ios": "3.0.0"
+    }
+  },
+  "peerDependencies": {
+    "tns-core-modules": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/couchbaselabs/nativescript-couchbase.git"
+  },
+  "scripts": {
+    "build": "echo \"Building...\"; tsc;",
+    "configure": "echo \"Configuring...\"; npm run configure-vanilla; npm run configure-angular;",
+    "configure-angular": "echo \"Configuring Angular...\"; cd ng-demo; tns install; tns plugin remove nativescript-couchbase; tns plugin add ..; cd ..",
+    "configure-vanilla": "echo \"Configuring Vanilla...\"; cd demo; tns install; tns plugin remove nativescript-couchbase; tns plugin add ..; cd ..",
+    "deploy-android-angular": "echo \"Deploying Android Angular...\"; npm run configure-angular; cd ng-demo; tns run android",
+    "deploy-android-vanilla": "echo \"Deploying Android Vanilla...\"; npm run configure-vanilla; cd demo; tns run android",
+    "deploy-ios-angular": "echo \"Deploying iOS Angular...\"; npm run configure-angular; cd ng-demo; tns run ios",
+    "deploy-ios-vanilla": "echo \"Deploying iOS Vanilla...\"; npm run configure-vanilla; cd demo; tns run ios",
+    "prepare": "echo \"Preparing...\"; npm run build;",
+    "webpack-angular": "echo \"Webpacking Angular...\"; npm run configure; cd ng-demo; npm run webpack-ios; npm run webpack-android; cd ..;",
+    "webpack-vanilla": "echo \"Webpacking Vanilla...\"; npm run configure; cd demo; npm run webpack-ios; npm run webpack-android; cd ..;"
+  },
+  "typings": "couchbase.d.ts",
+  "version": "1.0.18"
+}

@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      "@ngrx/store@7.0.0",
+      "D:\\work\\aloha\\aloha"
+    ]
+  ],
+  "_from": "@ngrx/store@7.0.0",
+  "_id": "@ngrx/store@7.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-fF4A4De/vtQawxGBc1jV5HiLrc/J3NS8A2UDRoD3kLdviDzAlAber6kuj5XmM+xxaI9f9qnUrwOVXr/oPfqoBg==",
+  "_location": "/@ngrx/store",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ngrx/store@7.0.0",
+    "name": "@ngrx/store",
+    "escapedName": "@ngrx%2fstore",
+    "scope": "@ngrx",
+    "rawSpec": "7.0.0",
+    "saveSpec": null,
+    "fetchSpec": "7.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ngrx/store/-/store-7.0.0.tgz",
+  "_spec": "7.0.0",
+  "_where": "D:\\work\\aloha\\aloha",
+  "author": {
+    "name": "NgRx"
+  },
+  "bugs": {
+    "url": "https://github.com/ngrx/platform/issues"
+  },
+  "description": "RxJS powered Redux for Angular apps",
+  "es2015": "./fesm2015/store.js",
+  "esm2015": "./esm2015/store.js",
+  "esm5": "./esm5/store.js",
+  "fesm2015": "./fesm2015/store.js",
+  "fesm5": "./fesm5/store.js",
+  "homepage": "https://github.com/ngrx/platform#readme",
+  "keywords": [
+    "RxJS",
+    "Angular",
+    "Redux",
+    "NgRx",
+    "Schematics",
+    "Angular CLI"
+  ],
+  "license": "MIT",
+  "main": "./bundles/store.umd.js",
+  "module": "./fesm5/store.js",
+  "name": "@ngrx/store",
+  "ng-update": {
+    "packageGroup": [
+      "@ngrx/store",
+      "@ngrx/effects",
+      "@ngrx/entity",
+      "@ngrx/router-store",
+      "@ngrx/schematics",
+      "@ngrx/store-devtools"
+    ],
+    "migrations": "./migrations/migration.json"
+  },
+  "peerDependencies": {
+    "@angular/core": "^7.0.0",
+    "rxjs": "^6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngrx/platform.git"
+  },
+  "schematics": "./schematics/collection.json",
+  "sideEffects": false,
+  "typings": "./store.d.ts",
+  "version": "7.0.0"
+}

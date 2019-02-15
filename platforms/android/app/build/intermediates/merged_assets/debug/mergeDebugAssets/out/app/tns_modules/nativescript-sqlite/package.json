@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      "nativescript-sqlite@2.3.0",
+      "D:\\work\\aloha\\aloha"
+    ]
+  ],
+  "_from": "nativescript-sqlite@2.3.0",
+  "_id": "nativescript-sqlite@2.3.0",
+  "_inBundle": false,
+  "_integrity": "sha512-VU1ptgRSQcC2Hp1bMNsosaBMQPKy2/JBo2xVYPQ89m+Uct7fiOHKpWDj2P3tOO9hB4UBHVZw7Oqh6fl/4o+8uQ==",
+  "_location": "/nativescript-sqlite",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "nativescript-sqlite@2.3.0",
+    "name": "nativescript-sqlite",
+    "escapedName": "nativescript-sqlite",
+    "rawSpec": "2.3.0",
+    "saveSpec": null,
+    "fetchSpec": "2.3.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-sqlite/-/nativescript-sqlite-2.3.0.tgz",
+  "_spec": "2.3.0",
+  "_where": "D:\\work\\aloha\\aloha",
+  "author": {
+    "name": "Nathanael Anderson",
+    "email": "nathan@master-technology.com"
+  },
+  "bugs": {
+    "url": "https://github.com/nathanaela/nativescript-sqlite/issues"
+  },
+  "description": "A sqlite NativeScript module for Android and iOS",
+  "homepage": "https://github.com/nathanaela/nativescript-sqlite",
+  "keywords": [
+    "NativeScript",
+    "SQL",
+    "SQLite",
+    "SQLCipher",
+    "Encrypted",
+    "Database",
+    "DB",
+    "iOS",
+    "Android",
+    "JavaScript",
+    "encryption"
+  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/nathanaela/nativescript-sqlite/blob/master/LICENSE"
+  },
+  "main": "sqlite",
+  "name": "nativescript-sqlite",
+  "nativescript": {
+    "platforms": {
+      "android": "1.4.0",
+      "ios": "1.4.0"
+    },
+    "plugin": {
+      "nan": "true",
+      "pan": "true",
+      "core3": "true",
+      "core4": "true",
+      "vue": "true",
+      "category": "Database"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanaela/nativescript-sqlite.git"
+  },
+  "typings": "sqlite.d.ts",
+  "version": "2.3.0"
+}
