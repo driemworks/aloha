@@ -1,6 +1,5 @@
-
-<hr>
 # ALOHA
+<hr>
 <img src="https://img.shields.io/hexpm/l/plug.svg" />
 
 <b>Aloha</b> is a mobile home automation application to trigger actions on your Philips Hue lights when your device connects or disconnects from your wifi network.
@@ -32,3 +31,4 @@ Aloha  is made available under the Apache 2 License.
 
 See https://github.com/peter-murray/node-hue-api for a guide on getting started with the hue api.
 
+ 
