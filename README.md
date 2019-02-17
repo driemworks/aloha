@@ -1,7 +1,6 @@
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `This is a work in progress.`
 <hr>
-<img src="https://deepart-io.s3.amazonaws.com/c/OeQsFjMqxXdhlikgTNrZERyHS.png" width="500" height="200"/>
+# ALOHA
 <img src="https://img.shields.io/hexpm/l/plug.svg" />
 
 <b>Aloha</b> is a mobile home automation application to trigger actions on your Philips Hue lights when your device connects or disconnects from your wifi network.
@@ -16,7 +15,6 @@ Aloha is developed using the angular flavor of nativescript. Using npm, install 
 npm i -g nativescript
 ```
 - set up nativescript https://docs.nativescript.org/start/introduction
-- set up emulator -> so far only tested on android.
 
 # Usage
 Run on android using 
