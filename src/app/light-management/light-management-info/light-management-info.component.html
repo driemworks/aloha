@@ -1,0 +1,8 @@
+<GridLayout columns="auto,2"
+            rows="auto, 2"
+            class="scene"
+            [ngClass]="even ? 'even' : 'odd'" 
+            verticalAlignment="top">
+    <Label verticalAlignment="top" horizontalAligntment="left" class="scene" text="{{ scene.name }} - {{ scene.groupName }}"></Label>
+    <Switch verticalAlignment="top" horizontalAligntment="right" class="switch" #switch [(ngModel)]="checked" (checkedChange)="editMode ? onCheckedEdit($event) : onCheckedNoEdit(switch)"></Switch>
+</GridLayout>

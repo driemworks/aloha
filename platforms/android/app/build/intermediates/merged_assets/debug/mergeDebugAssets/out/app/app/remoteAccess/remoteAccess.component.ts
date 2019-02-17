@@ -46,10 +46,12 @@ export class RemoteAccessComponent implements OnInit, OnDestroy {
 			} else {
 				// want to only allow user to either login to the portal or accept/rejection permission request
 				// re-route to authorization url
-				this.webViewRef.nativeElement.src = this.authorizationUrl;
+				console.log('Refreshing page..')
+					this.router.navigate(['/remote-access']);
 				if (this.webViewRef.nativeElement.src != this.authorizationUrl) {
 					// the hue website keeps redirecting to the user's main page
-					this.router.navigate(['/remote-access']);
+					// console.log('Refreshing page..')
+					// this.router.navigate(['/remote-access']);
 					// webView.src = this.authorizationUrl;
 					// this.webViewRef.nativeElement.src = this.authorizationUrl;
 				}

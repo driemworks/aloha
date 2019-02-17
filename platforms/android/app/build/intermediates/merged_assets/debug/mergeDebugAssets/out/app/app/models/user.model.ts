@@ -11,10 +11,10 @@ export interface User {
 }
 
 export const initialState: User = {
-    alias: "",
-    uuid: "",
-    bridgeIpAddress: "",
-    username: "",
+    alias: "Tony",
+    uuid: "2b5c79f227905fbe",
+    bridgeIpAddress: "192.168.1.236",
+    username: "c0j6qnxtbYqfcosNx8ccRgfwhPkY6wrlSn0oe-1H",
     groupStates: [
         new GroupState("1", "O3MwvjfktgOHlRF"),
         new GroupState("2", "X9MZ5qWaoQd8ZrX"),

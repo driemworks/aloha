@@ -21,38 +21,34 @@ export class RemoteAccessComponent implements OnInit, OnDestroy {
 	code: String = '';
 	webViewSubscription: Subscription;
 	subscription: Subscription;
-	user: User = null;
+	user: User;
 
 	constructor(private _store: Store<any>,
-				private router: Router) {
+				private router: Router) { }
+
+	ngOnInit() {
 		this.subscription = this._store.select((state: any) => state.appState.user).subscribe(user => {
 			this.user = user;
 		});
 	}
 
-	ngOnInit() { }
-
 	ngAfterViewInit() {
 		console.log('ngAfterViewInit')
 		let webView = this.webViewRef.nativeElement;
 		this.webViewSubscription = webView.on(WebView.loadFinishedEvent, (args: LoadEventData) => {
-			console.log('url: ' + args.url);
-			if (args.error || (!this.code && args.url && args.url.includes('aloha://home'))) {
+			var containsCode = !this.code && args.url && args.url.includes('aloha://home');
+			if (args.error || containsCode) {
 				// we have retrieved the code from the philips hue portal
 				if (args.url) {
 					this.code = args.url.split('code')[1].split('&')[0].split("=")[1]
 					this._store.dispatch(new GetAccessTokenAction(this.code, this.user));
+					this.router.navigate(['/home']);
 				}
-			} else {
+			} else if (!containsCode && !this.code) {
 				// want to only allow user to either login to the portal or accept/rejection permission request
 				// re-route to authorization url
-				if (this.webViewRef.nativeElement.src != this.authorizationUrl) {
-					// the hue website keeps redirecting to the user's main page
-					console.log('Refreshing page..')
-					this.router.navigate(['/remote-access']);
-					// webView.src = this.authorizationUrl;
-					// this.webViewRef.nativeElement.src = this.authorizationUrl;
-				}
+				console.log('Refreshing page..')
+				this.router.navigate(['/remote-access']);
 			}
 		});
 	}

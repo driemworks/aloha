@@ -1,8 +1,22 @@
-<StackLayout>
-    <Label text="Light State: "></Label>
-    <Button text="Lights" (tap)="getLightState($event)"></Button>
-    <!-- <Label text="{{ lightString }}"></Label> -->
-    <!-- <StackLayout *ngFor="let item of lightStates">
-        <Label text="Hello"></Label>
-    </StackLayout> -->
-</StackLayout>
+<div *ngIf="!editMode">
+    <Button #btn text="EDIT" (tap)="onTap(btn)"></Button>
+</div>
+<div *ngIf="editMode">
+    <StackLayout orientation="horizontal" backgroundColor="lightgray">
+        <Button class="save_btn" #save_btn text="SAVE" (tap)="onSaveTap()"></Button>
+        <Button class="cancel_btn" #cancel_btn text="CANCEL" (tap)="onCancelTap($event)"></Button>
+    </StackLayout>
+</div>
+<div *ngIf="scenes.length() > 0">
+    <StackLayout *ngFor="let scene of scenes;let even=even">
+            <light-management-info #info class="scene"
+                [even]="even"
+                [scene]="scene"
+                [user]="user"
+                [editMode]="editMode">
+            </light-management-info>
+        </StackLayout>
+</div>
+<div *ngIf="scenes.length() === 0">
+    <Label text="You do no have any scenes set up."></Label>
+</div>

@@ -1,19 +1,24 @@
 <StackLayout>
-    <div class="header">
-        <Label class="header-label" [ngClass]="(wifiStatus===1 || wifiStatus===3) ? 'header-label-connected' : 'header-label-not-connected'"  text="ALOHA"></Label>
-    </div>
-    <div *ngIf="wifiStatus===1 || wifiStatus===3" >
-        <div *ngIf="!user.username">
-            <Button text="Create User" [nsRouterLink]="['/user']" pageTransition="slide"></Button>
+    <div *ngIf="user" class="home-container">
+        <div class="header">
+            <Label class="header-label" [ngClass]="(wifiStatus===1 || wifiStatus===3) ? 'header-label-connected' : 'header-label-not-connected'"  text="ALOHA"></Label>
         </div>
-        <div *ngIf="user.username">
-            <light-management [user]="user"></light-management>
+        <div *ngIf="!user.accessToken">
+                <Button text="Authorize Remote Access" [nsRouterLink]="['/remote-access']"></Button>
         </div>
-    </div>
-    <div *ngIf="wifiStatus != 1 && wifiStatus != 3">
-        <Label text="You are offline."></Label>
-    </div>
-    <div *ngIf="!user.accessToken">
-            <Button text="Authorize Remote Access" [nsRouterLink]="['/remote-access']"></Button>
+        <div *ngIf="wifiStatus===1 || wifiStatus===3" >
+            <div *ngIf="!user.username">
+                <Button text="Create User" [nsRouterLink]="['/user']" pageTransition="slide"></Button>
+            </div>
+            <div *ngIf="user.username">
+                <light-management [user]="user"></light-management>
+            </div>
+        </div>
+        <div *ngIf="wifiStatus != 1 && wifiStatus != 3">
+            <Label text="You are offline."></Label>
+            <div *ngIf="user.accessToken">
+                    <light-management [user]="user"></light-management>
+                </div>
+        </div>
     </div>
 </StackLayout>

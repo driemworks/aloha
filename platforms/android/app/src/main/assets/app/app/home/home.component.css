@@ -1,16 +1,20 @@
+.home-container {
+    background: gray;
+}
+
 .header-label {
     background: green;
     height: 100px;
-    color: rgba(48, 47, 47, 0.384);
+    color: black;
     font-size: 30px;
     font-family: "San Francisco Pro Text";
     text-align: center;
 }
 
 .header-label-connected {
-    background: mediumspringgreen;
+    background: #00FFC5;
 }
 
 .header-label-not-connected {
-    background: red;
+    background: #481620;
 }

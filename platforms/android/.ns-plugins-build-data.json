@@ -2,6 +2,18 @@
 	"nativescript-couchbase": {
 		"D:\\work\\aloha\\aloha\\node_modules\\nativescript-couchbase\\platforms\\android\\include.gradle": "131bc857afe7f4e072c42413989d498a2c561954"
 	},
+	"nativescript-gif": {
+		"D:\\work\\aloha\\aloha\\node_modules\\nativescript-gif\\platforms\\android\\include.gradle": "5ed86bc5bc983476fb3faeba9e11de33984022f3"
+	},
+	"nativescript-ui-listview": {
+		"D:\\work\\aloha\\aloha\\node_modules\\nativescript-ui-listview\\platforms\\android\\include.gradle": "455b6fc1ccdd84405dfdbaf9171410e91b54b242",
+		"D:\\work\\aloha\\aloha\\node_modules\\nativescript-ui-listview\\platforms\\android\\typings\\listview.d.ts": "e3e19b40e51cdf4bda7077ad7ed93c9e2f7ef0e2",
+		"D:\\work\\aloha\\aloha\\node_modules\\nativescript-ui-listview\\platforms\\android\\TNSListView-release.aar": "f801c8b486d4cc5d4687a1818e90c17592a17daa"
+	},
+	"nativescript-ui-core": {
+		"D:\\work\\aloha\\aloha\\node_modules\\nativescript-ui-core\\platforms\\android\\TNSCore-release.aar": "cce16a86c2a6f56ca7243ed8db86b004ecb0016e",
+		"D:\\work\\aloha\\aloha\\node_modules\\nativescript-ui-core\\platforms\\android\\typings\\core.d.ts": "5c032652edfa1719ef8c8190fc0f66d3b1c313c2"
+	},
 	"tns-core-modules-widgets": {
 		"D:\\work\\aloha\\aloha\\node_modules\\tns-core-modules-widgets\\platforms\\android\\widgets-release.aar": "0adf00f86e29a73b3beb263951c7a10011372516"
 	}

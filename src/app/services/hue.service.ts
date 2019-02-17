@@ -50,6 +50,16 @@ export class HueService {
         return this.getApi(url, null);
     }
 
+    getGroups(bridgeIp, username) {
+        let url = `http://${bridgeIp}/api/${username}/groups`;
+        return this.getApi(url, null);
+    }
+
+    getGroupById(bridgeIp, username, groupId) {
+        let url = `http://${bridgeIp}/api/${username}/groups/${groupId}`;
+        return this.getApi(url, null);
+    }
+
     setGroupState(bridgeIp, username, groupId, groupState, accessToken, notConnected) {
         let url = '';
         var headers = {'Content-Type': 'application/json',
@@ -103,7 +113,7 @@ export class HueService {
                     return res;
                 }
                 return JSON.parse('[ERR]')
-        }), retry(1), catchError(this.handleError));
+        }), retry(3), catchError(this.handleError));
     }
 
     private handleError(err) {

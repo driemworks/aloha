@@ -39,15 +39,13 @@ export class UserEffects {
         uuid: '2b5c79f227905fbe'
     }
 
-    
-
     @Effect()
     writeUser$: Observable<Action> = this.actions$.pipe(
         ofType<WriteUserAction>(WRITE_USER),
         switchMap(action => {
             console.log('Writing user: ' + JSON.stringify(action.user));
             return this.userDataService.writeUser(action.user).pipe(map(res => {
-                this.router.navigate(['/home']);
+                // this.router.navigate(['/home']);
                 return new WriteUserSuccessAction();
             }, err => {
                 return new WriteUserFailedAction(err);
@@ -67,13 +65,14 @@ export class UserEffects {
         })
     );
 
+    // TODO refactor action name  to SAVE_USER
     @Effect()
-    updateUser$: Observable<Action> = this.actions$.pipe(
+    saveUser$: Observable<Action> = this.actions$.pipe(
         ofType<UpdateUserAction>(UPDATE_USER),
         switchMap((action) => {
             return of(this.updateUser(action.user)).pipe(map(() =>  {
                 // if we saved succesfully, then update the users state
-                this.router.navigate(['/home']);
+                // this.router.navigate(['/home']);
                 return new ReadUserSuccessAction(action.user);
             }));
         })

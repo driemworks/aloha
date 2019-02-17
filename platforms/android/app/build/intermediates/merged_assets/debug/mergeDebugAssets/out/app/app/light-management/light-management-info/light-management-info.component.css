@@ -1,0 +1,17 @@
+.scene {
+    background: rgb(120, 148, 148);
+    /* height: 100px; */
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: "San Francisco Pro Text";
+    text-align: left;
+    float: left;
+}
+
+.toggle {
+    float: right;
+}
+
+.even {
+    background: rgb(95, 137, 216);
+}

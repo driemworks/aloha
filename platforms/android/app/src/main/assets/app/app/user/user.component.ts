@@ -19,6 +19,7 @@ import { WriteUserAction } from '../store/user/user.actions';
 export class UserComponent implements OnInit {
  
 	constructor(private hueService: HueService,
+				private router: Router,
 				private _store: Store<User>) { }
 
 	doUnsubscribe = false;
@@ -33,8 +34,6 @@ export class UserComponent implements OnInit {
 			this.hueService.findBridgeIp().subscribe(ip => {
 				if (this.doUnsubscribe) {
 					this.handleCreateUser();
-					// sub.unsubscribe();
-					// this.router.navigate(['/home']);
 				}
 
 				this.ipAddress = ip[0]["internalipaddress"];
@@ -67,15 +66,12 @@ export class UserComponent implements OnInit {
 			username: this.username,
 			refreshToken: '',
 			accessToken: '',
-			groupStates: [
-				new GroupState("1", "O3MwvjfktgOHlRF"),
-				new GroupState("2", "X9MZ5qWaoQd8ZrX"),
-				new GroupState("3", "uVYKNKrZfxUQHHt")
-			]
+			groupStates: []
 		};
 
 		console.log("dispatching create user action to store");
 		this._store.dispatch(new WriteUserAction(deviceUuid, user));
 		this.subscription.unsubscribe();
+		this.router.navigate(['/home']);
 	}
 }

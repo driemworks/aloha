@@ -39,8 +39,6 @@ export class UserEffects {
         uuid: '2b5c79f227905fbe'
     }
 
-    
-
     @Effect()
     writeUser$: Observable<Action> = this.actions$.pipe(
         ofType<WriteUserAction>(WRITE_USER),
@@ -67,8 +65,9 @@ export class UserEffects {
         })
     );
 
+    // TODO refactor action name  to SAVE_USER
     @Effect()
-    updateUser$: Observable<Action> = this.actions$.pipe(
+    saveUser$: Observable<Action> = this.actions$.pipe(
         ofType<UpdateUserAction>(UPDATE_USER),
         switchMap((action) => {
             return of(this.updateUser(action.user)).pipe(map(() =>  {

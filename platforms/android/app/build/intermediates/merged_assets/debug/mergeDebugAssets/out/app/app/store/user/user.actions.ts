@@ -13,6 +13,8 @@ export const WRITE_USER = 'WRITE_USER_STATE';
 export const WRITE_USER_SUCCESS = 'WRITE_USER_STATE_SUCCESS';
 export const WRITE_USER_FAILED = 'WRITE_USER_STATE_FAILED';
 
+export const UPDATE_USER_STATE = 'UPDATE_USER_STATE';
+
 export class UpdateUserAction implements Action {
     readonly type = UPDATE_USER;
     constructor(public user: User) {}
@@ -58,7 +60,12 @@ export class WriteUserFailedAction implements Action {
     constructor(public error: String) { }
 }
 
+export class UpdateUserStateAction implements Action {
+    readonly type = UPDATE_USER_STATE;
+    constructor(public readonly user: User) { }
+}
 
 export type UserActions = ReadUserAction | ReadUserSuccessAction | ReadUserFailAction 
                         | WriteUserAction | WriteUserSuccessAction | WriteUserFailedAction 
-                        |UpdateUserAction | UpdateUserActionSuccess | UpdateUserActionFailed;
+                        |UpdateUserAction | UpdateUserActionSuccess | UpdateUserActionFailed
+                        | UpdateUserStateAction;

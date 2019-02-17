@@ -18,13 +18,16 @@ import { UserDataService } from "./services/database.service";
 import { HueEffects } from "./store/hue/hue.effects";
 import { hueReducer } from "./store/hue/hue.reducer";
 import { LightManagementComponent } from "./light-management/light-management.component";
+import { LightManagementInfoComponent } from "./light-management/light-management-info/light-management-info.component";
+import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 
 @NgModule({
     bootstrap: [
         AppComponent
     ],
     imports: [
-        NativeScriptModule,
+        NativeScriptModule,   
+        NativeScriptFormsModule,
         AppRoutingModule,
         HttpClientModule,
         NativeScriptHttpClientModule,
@@ -36,7 +39,8 @@ import { LightManagementComponent } from "./light-management/light-management.co
         UserComponent,
         HomeComponent,
         RemoteAccessComponent,
-        LightManagementComponent
+        LightManagementComponent,
+        LightManagementInfoComponent
     ],
     providers: [
         { 

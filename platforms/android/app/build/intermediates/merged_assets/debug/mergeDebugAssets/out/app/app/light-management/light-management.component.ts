@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { HueService } from '../services/hue.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/app.state';
-import { map } from 'rxjs/operators';
 import { User } from '../models/user.model';
-import { EventData } from 'tns-core-modules/ui/page/page';
+import { Scene } from '../models/scene.model';
+import { Router } from '@angular/router';
+import { LightManagementInfoComponent } from './light-management-info/light-management-info.component';
 
 @Component({
 	moduleId: module.id,
@@ -15,24 +16,104 @@ import { EventData } from 'tns-core-modules/ui/page/page';
 
 export class LightManagementComponent implements OnInit {
 
-	@Input() user: User;
-	lightString: String = 'light state';
+	private user: User;
+	scenes: any[] = [];
+	editMode: boolean = false;
 
-	lightStates: any[] = [];
+	@ViewChildren(LightManagementInfoComponent) lightInfoList: QueryList<LightManagementInfoComponent>;
 
-	constructor(private hueService: HueService) { }
+	constructor(private store: Store<AppState>,
+				private hueService: HueService) { 
+
+		this.store.select((state: any) => state.appState.user).subscribe(user => {
+			this.user = user;
+		});
+		
+		let mockScene: Scene = {
+			name: 'test scene name',
+			groupName: 'test group name',
+			groupId: "1",
+			id: "adfadfadsfadf",
+			enableOnHome: true
+		}
+		let anotherMock: Scene = {
+			name: 'Mock Scene 2',
+			groupName: 'Mock groupname 2',
+			id: "adfakif39vnsfg",
+			groupId: "3",
+			enableOnHome: false
+		}
+		// this.scenes[0] = mockScene;
+		// this.scenes[1] = anotherMock;
+	}
 
 	ngOnInit() {
-		console.log('Init with user: ' + JSON.stringify(this.user));
-		this.hueService.getLights(this.user.bridgeIpAddress, this.user.username).subscribe(res => {
-			console.log('******************' + res.keys);
-			// this.lightStates = Object.keys(res).map(e => res[e]);
-			// console.log('Mapped light states: ' + JSON.stringify(this.lightStates));
-			this.lightString = JSON.stringify(res);
+		this.hueService.getGroups(this.user.bridgeIpAddress, this.user.username).subscribe((groupsResponse: Response) => {
+			this.hueService.getScenes(this.user.bridgeIpAddress, this.user.username).subscribe((res: Response) => {
+				var idx = 0;
+				Object.keys(res).forEach(key => {
+					if (res[key].type === 'GroupScene') {
+						var groupId = res[key]['group'];
+						var groupName = groupsResponse[groupId]['name'];
+						var enableOnHome = false;
+
+						this.user.groupStates.forEach(groupstate => {
+							if (groupstate.sceneId === key) {
+								enableOnHome = true;
+							}
+						});
+
+						let scene: Scene = {
+							name: res[key]['name'],
+							groupName: groupName,
+							id: key,
+							groupId: groupId,
+							enableOnHome: enableOnHome
+						};
+						this.scenes[idx] = scene;
+						idx += 1;
+					}
+				});
+			});
 		});
 	}
 
-	getLightState(args: EventData) {
-		console.log("hello");
+	onTap(btn) {
+		this.editMode = !this.editMode;
+		if (this.editMode) {
+			btn.text = 'SAVE';
+		} else {
+			btn.text = 'EDIT';
+		}
 	}
+
+	onSaveTap() {
+		console.log('SAVE');
+		this.editMode = !this.editMode;
+		this.lightInfoList.forEach(info => {
+			if (info.changed) {
+				if (info.groupState === null) {
+					this.user.groupStates.forEach(groupstate => {
+						if (groupstate.sceneId === info.scene.id) {
+							this.user.groupStates.pop();
+						}
+					});
+				} else {
+					this.user.groupStates.push(info.groupState);
+				}
+			}
+		});
+	}
+
+	onCancelTap(args) {
+		console.log('cancel tapped');
+		this.editMode = false;
+		this.lightInfoList.forEach(info => {
+			if (info.changed) {
+				info.checked = info.scene.enableOnHome;
+			}
+		});
+
+	}
+
 }

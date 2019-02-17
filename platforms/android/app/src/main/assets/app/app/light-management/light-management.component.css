@@ -1,3 +1,15 @@
-.light-management {
+.save_btn {
+    width: 50%;
+    float: left;
+    background: rgba(31, 141, 31, 0.719);
+}
 
+.cancel_btn {
+    width: 50%;
+    float: right;
+    background: rgba(202, 19, 19, 0.74);
+}
+
+.light-management-container {
+    background: black;
 }

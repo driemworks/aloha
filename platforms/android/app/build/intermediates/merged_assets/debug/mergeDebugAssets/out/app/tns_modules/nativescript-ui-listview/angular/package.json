@@ -1,0 +1,5 @@
+{ 
+  "name" : "listview-directives",
+  "main" : "listview-directives",
+  "typings" : "listview-directives.d.ts" 
+ }

@@ -1,0 +1,9 @@
+<StackLayout class="scene" [ngClass]="even ? 'even' : 'odd'">
+    <div class="scene">
+        <Label text="scene name: {{ scene.name }}"></Label>
+        <Label text="group name: {{ scene.groupName }}"></Label>
+    </div>
+    <div class="toggle">
+        <Switch checked="{{ scene.enableOnHome }}" (checkedChange)="editMode ? onCheckedEdit($event) : onCheckedNoEdit(switch)"></Switch>
+    </div>
+</StackLayout>

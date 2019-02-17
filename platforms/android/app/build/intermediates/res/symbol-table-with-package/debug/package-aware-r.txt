@@ -231,6 +231,7 @@ attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
 attr fastScrollVerticalThumbDrawable
 attr fastScrollVerticalTrackDrawable
+attr fillViewport
 attr firstBaselineToTopHeight
 attr floatingActionButtonStyle
 attr font
@@ -245,7 +246,9 @@ attr fontStyle
 attr fontVariationSettings
 attr fontWeight
 attr foregroundInsidePadding
+attr freezesAnimation
 attr gapBetweenBars
+attr gifSource
 attr goIcon
 attr headerLayout
 attr height
@@ -275,6 +278,7 @@ attr indeterminateProgressStyle
 attr initialActivityCount
 attr insetForeground
 attr isLightTheme
+attr isOpaque
 attr itemBackground
 attr itemHorizontalPadding
 attr itemHorizontalTranslationEnabled
@@ -318,6 +322,7 @@ attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
 attr logo
 attr logoDescription
+attr loopCount
 attr materialButtonStyle
 attr materialCardViewStyle
 attr maxActionInlineWidth
@@ -353,6 +358,7 @@ attr progressBarPadding
 attr progressBarStyle
 attr queryBackground
 attr queryHint
+attr radScrollViewStyle
 attr radioButtonStyle
 attr ratingBarStyle
 attr ratingBarStyleIndicator
@@ -362,6 +368,7 @@ attr rippleColor
 attr scrimAnimationDuration
 attr scrimBackground
 attr scrimVisibleHeightTrigger
+attr scrollMode
 attr searchHintIcon
 attr searchIcon
 attr searchViewStyle
@@ -569,8 +576,11 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color groupHeaderTextColor
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color listAccentColor
+color listItemTextColor
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -617,6 +627,7 @@ color ns_accent
 color ns_blue
 color ns_primary
 color ns_primaryDark
+color pressedColor
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -631,6 +642,9 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color selectionColor
+color shadeColor
+color shadeColorCenter
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -639,6 +653,8 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
+color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -714,6 +730,7 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen card_deck_translation
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -951,6 +968,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_collapse
+drawable ic_expand
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -971,6 +990,11 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable pressable_item_background
+drawable selectable_item_background
+drawable shade_bottom
+drawable shade_corner
+drawable shade_right
 drawable splash_screen
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1008,6 +1032,7 @@ id async
 id auto
 id beginning
 id blocking
+id both
 id bottom
 id btnCopyException
 id btnCopyLogcat
@@ -1050,9 +1075,12 @@ id filled
 id fixed
 id forever
 id ghost_view
+id groupHeaderCollapseImage
+id groupHeaderText
 id group_divider
 id home
 id homeAsUp
+id horizontal
 id icon
 id icon_group
 id ifRoom
@@ -1143,6 +1171,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id text
+id text1
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
@@ -1169,6 +1198,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id vertical
 id view_offset_helper
 id visible
 id withText
@@ -1254,9 +1284,14 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout on_demand_automatic
+layout on_demand_manual
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout simple_empty_content
+layout simple_group_header_item
+layout simple_list_item
 layout support_simple_spinner_dropdown_item
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -1305,7 +1340,10 @@ string character_counter_pattern
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
+string list_view_default_empty_content
 string mtrl_chip_close_icon_content_description
+string on_demand_manual_button_busy
+string on_demand_manual_button_idle
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1532,6 +1570,8 @@ style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
+style RadScrollViewStyle
+style RadScrollViewTheme
 style RtlOverlay_DialogWindowTitle_AppCompat
 style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon
@@ -1862,6 +1902,8 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable GifTextureView gifSource isOpaque
+styleable GifView freezesAnimation loopCount
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
@@ -1876,6 +1918,8 @@ styleable MenuView android_windowAnimationStyle android_itemTextAppearance andro
 styleable NavigationView android_background android_fitsSystemWindows android_maxWidth elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconTint itemTextAppearance itemTextColor menu
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
+styleable RadScrollView fillViewport scrollMode
+styleable RadScrollViewTheme radScrollViewStyle
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable ScrimInsetsFrameLayout insetForeground

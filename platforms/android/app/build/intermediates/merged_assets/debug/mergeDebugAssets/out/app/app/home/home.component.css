@@ -1,3 +1,7 @@
+.home-container {
+    background: gray;
+}
+
 .header-label {
     background: green;
     height: 100px;
