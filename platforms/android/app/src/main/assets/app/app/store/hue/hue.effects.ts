@@ -92,32 +92,40 @@ export class HueEffects {
     updateLightState$: Observable<Action> = this.actions$.pipe(
         ofType<UpdateLightStateAction>(UPDATE_LIGHT_STATE),
         switchMap(action => {
-            return of(this.updateLightState(action.user, action.isWifiConnection)).pipe(map(res => {
+            return of(this.updateLightState(action.user, action.isWifiConnection, action.turnOn)).pipe(map(res => {
                 return new GetLightStateAction(action.user.bridgeIpAddress, action.user.username);
             }))
         })
     )
     
-    updateLightState(user: User, isWifiConnection: boolean) {
+    updateLightState(user: User, isWifiConnection: boolean, turnOn: boolean) {
         console.log('Updating light state');
         console.log('wifi status is: ' + isWifiConnection);
         if (isWifiConnection) {
-            user.groupStates.forEach(state => {
-                this.hueService.setGroupState(user.bridgeIpAddress, user.username, state.groupId, {
-                    "scene": state.sceneId
-                }, false, false).subscribe(res => {
-                    console.log(res);
+            if (turnOn) {
+                user.groupStates.forEach(state => {
+                    this.hueService.setGroupState(user.bridgeIpAddress, user.username, state.groupId, {
+                        "scene": state.sceneId
+                    }, false, false).subscribe(res => {
+                        console.log(res);
+                    });
                 });
-            });
+            } else {
+                this.turnOffLights(user, true);
+            }
         } else {
-            user.groupStates.forEach(state => {
-                this.hueService.setGroupState(user.bridgeIpAddress, user.username, state.groupId, {
-                    "on": false
-                }, user.accessToken, true).subscribe(res => {
-                    console.log(res);
-                });
-            });
+            this.turnOffLights(user, false);
         }
+    }
+
+    turnOffLights(user: User, isLocal: boolean) {
+        user.groupStates.forEach(state => {
+            this.hueService.setGroupState(user.bridgeIpAddress, user.username, state.groupId, {
+                "on": false
+            }, user.accessToken, !isLocal).subscribe(res => {
+                console.log(res);
+            });
+        });
     }
     
     // err => {

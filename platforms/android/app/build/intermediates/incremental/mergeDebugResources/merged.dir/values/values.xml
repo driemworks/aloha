@@ -84,11 +84,8 @@
     <color name="error_color_material_light">#ff5722</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
-    <color name="groupHeaderTextColor">#88000000</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
-    <color name="listAccentColor">#FF009688</color>
-    <color name="listItemTextColor">#DF000000</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -117,7 +114,6 @@
     <color name="ns_blue">#272734</color>
     <color name="ns_primary">#F5F5F5</color>
     <color name="ns_primaryDark">#757575</color>
-    <color name="pressedColor">#16000000</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -132,17 +128,12 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <color name="selectionColor">#20000000</color>
-    <color name="shadeColor">#22000000</color>
-    <color name="shadeColorCenter">#05000000</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
-    <color name="transparent">#00000000</color>
-    <color name="white">#FFFFFF</color>
     <declare-styleable name="ActionBar">
         <!-- The type of navigation to use. -->
         <attr name="navigationMode">
@@ -1460,13 +1451,6 @@
         <!-- State identifier indicating the popup will be above the anchor. -->
         <attr format="boolean" name="state_above_anchor"/>
     </declare-styleable>
-    <declare-styleable name="RadScrollView"><attr format="boolean" name="fillViewport"/><attr name="scrollMode">
-            <flag name="none" value="0"/>
-            <flag name="vertical" value="1"/>
-            <flag name="horizontal" value="2"/>
-            <flag name="both" value="3"/>
-        </attr></declare-styleable>
-    <declare-styleable name="RadScrollViewTheme"><attr format="reference" name="radScrollViewStyle"/></declare-styleable>
     <declare-styleable name="RecycleListView">
         <!-- Bottom padding to use when no buttons are present. -->
         <attr format="dimension" name="paddingBottomNoButtons"/>
@@ -1905,7 +1889,6 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <dimen name="card_deck_translation">8dp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
@@ -2150,10 +2133,7 @@
     <string name="fab_transformation_scrim_behavior" translatable="false">android.support.design.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">android.support.design.transformation.FabTransformationSheetBehavior</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">android.support.design.behavior.HideBottomViewOnScrollBehavior</string>
-    <string name="list_view_default_empty_content">No items</string>
     <string name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
-    <string name="on_demand_manual_button_busy">LOADING…</string>
-    <string name="on_demand_manual_button_idle">LOAD MORE</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -3773,13 +3753,6 @@
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
     <style name="Platform.Widget.AppCompat.Spinner" parent="android:Widget.Holo.Spinner"/>
-    <style name="RadScrollViewStyle">
-        <item name="fillViewport">false</item>
-        <item name="scrollMode">vertical</item>
-    </style>
-    <style name="RadScrollViewTheme">
-        <item name="radScrollViewStyle">@style/RadScrollViewStyle</item>
-    </style>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
     </style>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">

@@ -7,6 +7,9 @@ D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\light-manageme
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\light-management\light-management-info\light-management-info.component.spec.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\light-management\light-management.component.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\light-management\light-management.component.spec.js
+D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\light-management\scene-managment\scene-management.component.js
+D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\light-management\scene-managment\scene-managment.component.spec.js
+D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\models\GroupScene.model.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\models\GroupState.model.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\models\lightstate.model.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\models\scene.model.js
@@ -27,6 +30,9 @@ D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\store\user\use
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\user\user.component.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\user\user.component.spec.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\main.js
+D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-accordion\accordion.common.js
+D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-accordion\accordion.js
+D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-accordion\hooks\before-livesync\nativescript-angular-sync.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\animations\animation-driver.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\animations\animation-player.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\animations\animations.module.js
@@ -109,11 +115,6 @@ D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\native
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl-common.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-sqlite\sqlite.js
-D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-ui-listview\hooks\before-livesync\nativescript-angular-sync.js
-D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-ui-listview\ui-listview.common.js
-D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-ui-listview\ui-listview.js
-D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-ui-listview\vue\component.js
-D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-ui-listview\vue\index.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\nativescript-uuid\index.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application\application-common.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application\application.js

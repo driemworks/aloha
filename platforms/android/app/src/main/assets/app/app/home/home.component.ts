@@ -79,13 +79,11 @@ export class HomeComponent implements OnInit, OnDestroy {
         stopMonitoring();
     }
 
- 
-
     connectedBehavior() {
-        this._store.dispatch(new UpdateLightStateAction(this.user, true));
+        this._store.dispatch(new UpdateLightStateAction(this.user, true, true));
     }
 
     notConnectedBehavior() {
-        this._store.dispatch(new UpdateLightStateAction(this.user, false));
+        this._store.dispatch(new UpdateLightStateAction(this.user, false, false));
     }
 }

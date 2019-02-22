@@ -45,7 +45,7 @@ export class UserEffects {
         switchMap(action => {
             console.log('Writing user: ' + JSON.stringify(action.user));
             return this.userDataService.writeUser(action.user).pipe(map(res => {
-                this.router.navigate(['/home']);
+                // this.router.navigate(['/home']);
                 return new WriteUserSuccessAction();
             }, err => {
                 return new WriteUserFailedAction(err);
@@ -72,7 +72,7 @@ export class UserEffects {
         switchMap((action) => {
             return of(this.updateUser(action.user)).pipe(map(() =>  {
                 // if we saved succesfully, then update the users state
-                this.router.navigate(['/home']);
+                // this.router.navigate(['/home']);
                 return new ReadUserSuccessAction(action.user);
             }));
         })

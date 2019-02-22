@@ -1,7 +1,6 @@
 import { UserActions, READ_USER_SUCCESS, UPDATE_USER_SUCCESS, UPDATE_USER_STATE } from "./user.actions";
 import { AppState } from "../app.state";
 
-
 export function userReducer(state: AppState, action: UserActions): AppState {
     switch (action.type) {
         case READ_USER_SUCCESS:

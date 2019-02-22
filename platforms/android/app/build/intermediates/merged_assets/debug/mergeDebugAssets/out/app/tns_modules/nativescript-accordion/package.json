@@ -1,0 +1,98 @@
+{
+  "_from": "nativescript-accordion",
+  "_id": "nativescript-accordion@6.0.0-beta.2",
+  "_inBundle": false,
+  "_integrity": "sha512-/XwoO6ILvCI5iEicIVryv4Zrrds8Ok8RqgMbenko9u4i2zNKgn9KR7umhKiYaxUh8/GkYNaXtq6vkCN/Hwr3RA==",
+  "_location": "/nativescript-accordion",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "nativescript-accordion",
+    "name": "nativescript-accordion",
+    "escapedName": "nativescript-accordion",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-accordion/-/nativescript-accordion-6.0.0-beta.2.tgz",
+  "_shasum": "308aabfa357bf39651cc8bc4d57ec03556ec0bcc",
+  "_spec": "nativescript-accordion",
+  "_where": "D:\\work\\aloha\\aloha",
+  "author": {
+    "name": "Osei Fortune",
+    "email": "fortune.osei@yahoo.com"
+  },
+  "bootstrapper": "nativescript-plugin-seed",
+  "bugs": {
+    "url": "https://github.com/triniwiz/nativescript-accordion/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A layout which supports expanding and collapsing child views",
+  "devDependencies": {
+    "@angular/animations": "~6.1.0",
+    "@angular/common": "~6.1.0",
+    "@angular/compiler": "~6.1.0",
+    "@angular/compiler-cli": "~6.1.0",
+    "@angular/core": "~6.1.0",
+    "@angular/forms": "~6.1.0",
+    "@angular/http": "~6.1.0",
+    "@angular/platform-browser": "~6.1.0",
+    "@angular/platform-server": "~6.1.0",
+    "@angular/router": "~6.1.0",
+    "nativescript-angular": "~6.1.0",
+    "nativescript-vue": "^2.0.2",
+    "prompt": "^1.0.0",
+    "rimraf": "^2.6.2",
+    "rxjs": "~6.0.0",
+    "semver": "^5.5.0",
+    "tns-core-modules": "^5.0.0",
+    "tns-platform-declarations": "^5.0.0",
+    "tslint": "^5.11.0",
+    "typescript": "~2.9.2",
+    "vue": "^2.5.17",
+    "zone.js": "^0.8.4"
+  },
+  "homepage": "https://github.com/triniwiz/nativescript-accordion",
+  "keywords": [
+    "NativeScript",
+    "JavaScript",
+    "Android",
+    "iOS"
+  ],
+  "license": "Apache-2.0",
+  "main": "accordion",
+  "name": "nativescript-accordion",
+  "nativescript": {
+    "platforms": {
+      "android": "5.0.0",
+      "ios": "5.0.0"
+    }
+  },
+  "scripts": {
+    "build": "npm run tsc && npm run build.native",
+    "build.native": "node scripts/build-native.js",
+    "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'",
+    "clean": "npm run demo.reset && npx rimraf -- node_modules package-lock.json && npm i",
+    "demo.android": "npm run tsc && cd ../demo && tns run android --syncAllFiles",
+    "demo.ios": "npm run tsc && cd ../demo && tns run ios --syncAllFiles",
+    "demo.reset": "cd ../demo && npx rimraf -- hooks node_modules platforms package-lock.json",
+    "ngc": "npm run ngc.clean && node --max-old-space-size=8192 ./node_modules/.bin/ngc -p tsconfig.json",
+    "ngc.clean": "find  ./ angular/ -name '*.metadata.json' -delete",
+    "plugin.prepare": "npm run build && cd ../demo && tns plugin remove nativescript-accordion && tns plugin add ../src",
+    "plugin.tscwatch": "npm run tsc -- -w",
+    "postclone": "npm i && node scripts/postclone.js && cd ../demo && npm i && npx rimraf -- package-lock.json && cd ../src",
+    "prepack": "npm run build.native",
+    "test.android": "npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
+    "test.ios": "npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
+    "tsc": "tsc",
+    "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\""
+  },
+  "typings": "index.d.ts",
+  "version": "6.0.0-beta.2"
+}

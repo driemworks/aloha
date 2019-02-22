@@ -5,5 +5,5 @@ import { LightState } from "../models/lightstate.model";
 
 export interface AppState {
     user: User;
-    lightState: LightState[];
+    // lightState: LightState[];
 }

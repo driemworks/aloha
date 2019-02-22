@@ -25,16 +25,14 @@ export class LightManagementInfoComponent implements OnInit {
 	checked: boolean = false;
 	changed: boolean = false;
 
-	constructor(private store: Store<AppState>) {
-		this.sceneGroupState = new GroupState(this.scene.groupId, this.scene.id);
-		this.checked = this.scene.enableOnHome;
-	 }
+	constructor(private store: Store<AppState>) { }
 
 	ngOnInit() {
+		// this.sceneGroupState = new GroupState(this.scene.groupId, this.scene.id);
+		// this.checked = this.scene.enableOnHome;
 	}
 
 	onCheckedNoEdit(_switch) {
-		console.log('The switch is checked? = ' + _switch.checked);
 		// if the switch's status does not match the stored status and we are not in edit mode,
 		// then flip the switch back to match the scene
 		if (_switch.checked !== this.scene.enableOnHome) {
@@ -46,13 +44,12 @@ export class LightManagementInfoComponent implements OnInit {
 		// if the switch is checked, set the group state to the scene's group state
 		// otherwise set it to null
 		this.changed = !this.changed;
-		this.scene.enableOnHome = args.object.checked;
+		this.checked = args.object.checked;
 		if (args.object.checked) {
 			this.groupState = this.sceneGroupState;
 		} else {
 			this.groupState = null;
 		}
-		this.store.dispatch(new UpdateUserStateAction(this.user));
 	}
 
 }

@@ -20,6 +20,7 @@ import { hueReducer } from "./store/hue/hue.reducer";
 import { LightManagementComponent } from "./light-management/light-management.component";
 import { LightManagementInfoComponent } from "./light-management/light-management-info/light-management-info.component";
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
+import { SceneManagementComponent } from "./light-management/scene-managment/scene-management.component";
 
 @NgModule({
     bootstrap: [
@@ -40,7 +41,8 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
         HomeComponent,
         RemoteAccessComponent,
         LightManagementComponent,
-        LightManagementInfoComponent
+        LightManagementInfoComponent,
+        SceneManagementComponent,
     ],
     providers: [
         { 
@@ -53,7 +55,7 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
     ],
     schemas: [
         NO_ERRORS_SCHEMA
-    ]
+    ],
 })
 /*
 Pass your application module to the bootstrapModule function located in main.ts to start your app

@@ -1,5 +1,5 @@
 <StackLayout>
-    <div class="home-container">
+    <div *ngIf="user" class="home-container">
         <div class="header">
             <Label class="header-label" [ngClass]="(wifiStatus===1 || wifiStatus===3) ? 'header-label-connected' : 'header-label-not-connected'"  text="ALOHA"></Label>
         </div>

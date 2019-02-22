@@ -17,7 +17,7 @@ import { HueService } from '../services/hue.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-    user: User = null;
+    user: User;
     lightstate: any;
     wifiStatus: number = -1;
 
@@ -27,12 +27,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     groups: any[];
 
     constructor(private _store: Store<AppState>, private hueService: HueService) {
-        this._store.select((state: any) => state.appState.user).subscribe(user => {
-            this.user = user;
-        });
+        // this._store.select((state: any) => state.appState.user).subscribe(user => {
+        //     this.user = user;
+        // });
     }
 
 	ngOnInit() {
+        this._store.select((state: any) => state.appState.user).subscribe(user => {
+            this.user = user;
+        });
         this.startMonitoring();
     }
 
@@ -48,22 +51,25 @@ export class HomeComponent implements OnInit, OnDestroy {
                 console.log('The wifi status changed!');
                 if (this.connectionStatus) {
                     console.log('group states' + JSON.stringify(this.user.groupStates));
-                    if (this.user.bridgeIpAddress && this.user.username && this.user.groupStates) {
+                    if (this.user.bridgeIpAddress && this.user.username) {
                         if (!this.groups) {
                             this.hueService.getGroups(this.user.bridgeIpAddress, this.user.username).subscribe((res: Response) => {
                                 // groupId -> groupName
-                                console.log('Mapping group ids to names');
                                 Object.keys(res).forEach(key => {
                                     this.groups[key] = res[key]['name'];
                                 })
                             });
                         }
-                        // this.connectedBehavior();
-                    } else {
-                        console.log('No group states available');
+                        if (this.user.groupStates) {
+                            // this.connectedBehavior();
+                        } else {
+                            console.log('No group states found!');
+                        }
                     }
                 } else {
-                    // this.notConnectedBehavior();
+                    if (this.user.groupStates) {
+                        // this.notConnectedBehavior();
+                    }
                 }
             }
         });

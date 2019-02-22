@@ -113,7 +113,7 @@ export class HueService {
                     return res;
                 }
                 return JSON.parse('[ERR]')
-        }), catchError(this.handleError));
+        }), retry(3), catchError(this.handleError));
     }
 
     private handleError(err) {

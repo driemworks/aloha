@@ -1,21 +1,5 @@
-<div class="light-management-container">
-    <div *ngIf="!editMode">
-            <Button #btn text="EDIT" (tap)="onTap(btn)"></Button>
-        </div>
-        <div *ngIf="editMode">
-            <StackLayout orientation="horizontal" backgroundColor="lightgray">
-                <Button class="save_btn" #save_btn text="SAVE" (tap)="onSaveTap()"></Button>
-                <Button class="cancel_btn" #cancel_btn text="CANCEL" (tap)="onCancelTap($event)"></Button>
-            </StackLayout>
-        </div>
-        <div>
-            <StackLayout *ngFor="let scene of scenes;let even=even">
-                    <light-management-info #info class="scene"
-                        [even]="even"
-                        [scene]="scene"
-                        [user]="user"
-                        [editMode]="editMode">
-                    </light-management-info>
-                </StackLayout>
-        </div>
-</div>
+<StackLayout>
+    <StackLayout *ngFor="let item of groupScenes | keyvalue">
+        <scene-management [user]="user" [groupScene]="item.value"></scene-management>
+    </StackLayout>
+</StackLayout>

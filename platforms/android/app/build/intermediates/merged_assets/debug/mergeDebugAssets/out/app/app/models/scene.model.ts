@@ -1,7 +1,5 @@
 export class Scene {
-    id: String;
-    name: String;
-    groupId: String
-    groupName: String;
+    id: string;
+    name: string;
     enableOnHome: boolean;
 }

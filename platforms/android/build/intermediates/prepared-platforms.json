@@ -12,12 +12,12 @@
     "@ngrx/store": true,
     "angular-font-awesome": true,
     "base-64": true,
+    "nativescript-accordion": true,
     "nativescript-angular": true,
     "nativescript-couchbase": true,
     "nativescript-gif": true,
     "nativescript-sqlite": true,
     "nativescript-theme-core": true,
-    "nativescript-ui-listview": true,
     "nativescript-uuid": true,
     "reflect-metadata": true,
     "rxjs": true,
@@ -27,6 +27,5 @@
     "zone.js": true,
     "tslib": true,
     "nativescript-intl": true,
-    "nativescript-ui-core": true,
     "tns-core-modules-widgets": true
 }

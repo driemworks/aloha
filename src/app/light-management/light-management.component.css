@@ -13,3 +13,12 @@
 .light-management-container {
     background: black;
 }
+
+.acc-header {
+    background: rgba(81, 103, 114, 0.904);
+    font-size: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    height: 100%;
+}
+

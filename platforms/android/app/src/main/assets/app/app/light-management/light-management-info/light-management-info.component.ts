@@ -28,8 +28,8 @@ export class LightManagementInfoComponent implements OnInit {
 	constructor(private store: Store<AppState>) { }
 
 	ngOnInit() {
-		this.sceneGroupState = new GroupState(this.scene.groupId, this.scene.id);
-		this.checked = this.scene.enableOnHome;
+		// this.sceneGroupState = new GroupState(this.scene.groupId, this.scene.id);
+		// this.checked = this.scene.enableOnHome;
 	}
 
 	onCheckedNoEdit(_switch) {

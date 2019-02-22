@@ -1,17 +1,26 @@
 .scene {
-    background: rgb(120, 148, 148);
-    /* height: 100px; */
-    color: rgb(255, 255, 255);
+    color: black;
     font-size: 20px;
     font-family: "San Francisco Pro Text";
     text-align: left;
-    float: left;
+    /* float: left; */
 }
 
-.toggle {
+.shadow {
+    border:2px soild #fff;
+    margin: 15px 15px;
+    -webkit-box-shadow: 2px 3px 8px #fff;
+    -moz-box-shadow: 2px 3px 8px #fff;
+    box-shadow: 2px 3px 8px #fff;
+}
+
+.switch {
     float: right;
+    margin-left: 80%;
+    background-color: black;
+    /* width: 20%; */
 }
 
 .even {
-    background: rgb(95, 137, 216);
+    background: #A5CCD1;
 }

@@ -1,5 +1,9 @@
 [
     {
+        "name": "nativescript-accordion",
+        "directory": "..\\..\\node_modules\\nativescript-accordion"
+    },
+    {
         "name": "nativescript-angular",
         "directory": "..\\..\\node_modules\\nativescript-angular"
     },
@@ -20,10 +24,6 @@
         "directory": "..\\..\\node_modules\\nativescript-theme-core"
     },
     {
-        "name": "nativescript-ui-listview",
-        "directory": "..\\..\\node_modules\\nativescript-ui-listview"
-    },
-    {
         "name": "nativescript-uuid",
         "directory": "..\\..\\node_modules\\nativescript-uuid"
     },
@@ -34,10 +34,6 @@
     {
         "name": "nativescript-intl",
         "directory": "..\\..\\node_modules\\nativescript-intl"
-    },
-    {
-        "name": "nativescript-ui-core",
-        "directory": "..\\..\\node_modules\\nativescript-ui-core"
     },
     {
         "name": "tns-core-modules-widgets",
