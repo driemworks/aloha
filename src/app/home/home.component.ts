@@ -61,14 +61,14 @@ export class HomeComponent implements OnInit, OnDestroy {
                             });
                         }
                         if (this.user.groupStates) {
-                            this.connectedBehavior();
+                            // this.connectedBehavior();
                         } else {
                             console.log('No group states found!');
                         }
                     }
                 } else {
                     if (this.user.groupStates) {
-                        this.notConnectedBehavior();
+                        // this.notConnectedBehavior();
                     }
                 }
             }

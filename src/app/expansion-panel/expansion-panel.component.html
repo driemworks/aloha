@@ -1,0 +1,13 @@
+<StackLayout>
+    <div class="header">
+        <GridLayout (tap)="handleClick()" class="header" rows="auto" columns="*, auto, auto" orientation="horizontal">
+            <ng-content row="0" col="0" select="header"></ng-content>
+            <Label row="0" col="2" *ngIf="!showPanel" text="&#xf107;" class="fa-solid chevron"></Label>
+            <Label row="0" col="2" *ngIf="showPanel" text="&#xf106;" class="fa-solid chevron"></Label>
+        </GridLayout>
+    </div>
+    <div class="expansion-panel" *ngIf="showPanel" [ngClass]="showPanel ? 'expanded' : 'collapsed'">
+        <ng-content class="expansion-panel" select="content"></ng-content>
+    </div>
+<StackLayout>
+            

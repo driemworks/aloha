@@ -1,0 +1,17 @@
+.chevron {
+    margin-right: 5%;
+}
+
+.expansion-panel {
+    float: right;
+    margin-left: 15px;
+    padding: 10px;
+}
+
+.header {
+    padding: 10px;
+    padding-right: 20px;
+    margin: 0px, 10px, 10px, 10px;
+    background: rgba(105, 131, 136, 0.616);
+    font-size: 25px;
+}

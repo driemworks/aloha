@@ -93,7 +93,7 @@ export class SceneManagementComponent implements OnInit {
 
 	handleClick() {
 		console.log('Enabled scene: ' + JSON.stringify(this.enabledSceneName));
-		this.showPanel = !this.showPanel;
+		// this.showPanel = !this.showPanel;
 		if (this.showPanel) {
 			// if we are showing the panel, focus on the first item
 			this.selectedScene = 0;

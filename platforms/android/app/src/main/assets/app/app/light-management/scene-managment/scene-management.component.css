@@ -6,22 +6,12 @@
     font-size: 25px;
 }
 
-.fa {
-    font-family: Font Awesome 5 Free Regular, fa-regular-400;
-    font-weight: 400;
-}
-
-.fa-solid {
-    font-family: Font Awesome 5 Free, fa-solid-900;
-    font-weight: 900;
-}
-
 .group-name-entry {
 
 }
 
 .enabled-scene-name-entry {
-    padding-right: 50px;
+    padding-right: 30%;
 }
 
 .show {

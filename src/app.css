@@ -14,3 +14,13 @@ refer to http://docs.nativescript.org/ui/theme.
 ActionBar {
     height: 0px;
 }
+
+.fa {
+    font-family: Font Awesome 5 Free Regular, fa-regular-400;
+    font-weight: 400;
+}
+
+.fa-solid {
+    font-family: Font Awesome 5 Free, fa-solid-900;
+    font-weight: 900;
+}

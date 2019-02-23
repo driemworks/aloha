@@ -1,13 +1,9 @@
-<StackLayout>
-    <div class="grid-entry-header">
-        <GridLayout (tap)="handleClick()" class="grid-entry" rows="auto" columns="*, auto, auto" orientation="horizontal">
-            <Label class="group-name-entry" row="0" col="0" [text]="groupScene.groupName"></Label>
-            <Label class="enabled-scene-name-entry" row="0" col="1" [text]="enabledSceneName"></Label>
-            <Label *ngIf="!showPanel" row="0" col="2" text="&#xf107;" class="fa-solid"></Label>
-            <Label *ngIf="showPanel" row="0" col="2" text="&#xf106;" class="fa-solid"></Label>
-        </GridLayout>
-    </div>
-    <div *ngIf="showPanel">
+<expansion-panel (onTogglePanel)="handleClick()">
+    <header>
+        <Label class="group-name-entry" row="0" col="0" [text]="groupScene.groupName"></Label>
+        <Label class="enabled-scene-name-entry" row="0" col="1" [text]="enabledSceneName"></Label>
+    </header>
+    <content>
         <StackLayout class="expansion-panel" slide-in slideFrom="top">
             <ListPicker [items]="scenes" [selectedIndex]="selectedScene" (selectedIndexChange)="selectedIndexChange($event)" class="p-15"></ListPicker>
         </StackLayout>
@@ -18,6 +14,5 @@
                 <Label (tap)="saveChange()" row="0" col="2" text="&#xf058;" class="fa fa-10x save btn"></Label>
             </GridLayout>
         </div>
-    </div>
-<StackLayout>
-        
+    </content>
+</expansion-panel>
