@@ -1,5 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
+/**
+ * A simple expansion panel
+ *
+ * @export ExpansionPanelComponent
+ * @class ExpansionPanelComponent
+ * @author Tony
+ */
 @Component({
 	moduleId: module.id,
 	selector: 'expansion-panel',

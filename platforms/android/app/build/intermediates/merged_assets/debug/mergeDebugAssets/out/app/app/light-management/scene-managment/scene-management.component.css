@@ -1,3 +1,49 @@
-.scene-managment {
+.grid-entry {
+    padding: 10px;
+    padding-right: 20px;
+    margin: 0px, 10px, 10px, 10px;
+    background: rgba(105, 131, 136, 0.616);
+    font-size: 25px;
+}
 
+.group-name-entry {
+
+}
+
+.enabled-scene-name-entry {
+    padding-right: 30%;
+}
+
+.show {
+    display: inline;
+}
+
+.hide {
+    display: none;
+}
+
+.expansion-panel {
+    float: right;
+    margin-left: 15px;
+    padding: 10px;
+}
+
+.save {
+    color: green;
+    display: block;
+    float: right;
+    padding-left: 100px;
+    margin-left: 22%;
+}
+
+.cancel {
+    color: red;
+}
+
+.btn {
+    font-size: 30;
+}
+
+.middle-switch {
+    width: 33%;
 }

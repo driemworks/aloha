@@ -6,8 +6,6 @@ import { UpdateLightStateAction } from '../store/hue/hue.actions';
 import { map } from 'rxjs/operators';
 import { AppState } from '../store/app.state';
 import { HueService } from '../services/hue.service';
-// import { Store } from '@ngrx/store';
-// import { Auth0 } from 'nativescript-auth0';
 
 @Component({
 	moduleId: module.id,
@@ -27,15 +25,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     groups: any[];
 
     constructor(private _store: Store<AppState>, private hueService: HueService) {
-        // this._store.select((state: any) => state.appState.user).subscribe(user => {
-        //     this.user = user;
-        // });
+        this._store.select((state: any) => state.appState.user).subscribe(user => {
+            this.user = user;
+            console.log('IN HOME - USING USER ' + JSON.stringify(user));
+        });
     }
 
 	ngOnInit() {
-        this._store.select((state: any) => state.appState.user).subscribe(user => {
-            this.user = user;
-        });
+        // this._store.select((state: any) => state.appState.user).subscribe(user => {
+        //     this.user = user;
+        //     console.log('IN HOME - USING USER ' + JSON.stringify(user));
+        // });
         this.startMonitoring();
     }
 
@@ -79,13 +79,11 @@ export class HomeComponent implements OnInit, OnDestroy {
         stopMonitoring();
     }
 
- 
-
     connectedBehavior() {
-        this._store.dispatch(new UpdateLightStateAction(this.user, true));
+        this._store.dispatch(new UpdateLightStateAction(this.user, true, true));
     }
 
     notConnectedBehavior() {
-        this._store.dispatch(new UpdateLightStateAction(this.user, false));
+        this._store.dispatch(new UpdateLightStateAction(this.user, false, false));
     }
 }

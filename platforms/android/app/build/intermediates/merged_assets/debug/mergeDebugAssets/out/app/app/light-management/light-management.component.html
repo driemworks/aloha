@@ -1,5 +1,5 @@
-<div>
-    <StackLayout *ngfor="let item of groupScenes | keyvalue">
-        <scene-management [groupScene]="item.value"></scene-management>
+<StackLayout>
+    <StackLayout *ngFor="let item of groupScenes | keyvalue">
+        <scene-management [user]="user" [groupScene]="item.value"></scene-management>
     </StackLayout>
-</div>
+</StackLayout>

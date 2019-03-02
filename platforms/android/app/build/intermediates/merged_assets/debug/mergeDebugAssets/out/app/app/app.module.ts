@@ -21,6 +21,7 @@ import { LightManagementComponent } from "./light-management/light-management.co
 import { LightManagementInfoComponent } from "./light-management/light-management-info/light-management-info.component";
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { SceneManagementComponent } from "./light-management/scene-managment/scene-management.component";
+import { ExpansionPanelComponent } from "./expansion-panel/expansion-panel.component";
 
 @NgModule({
     bootstrap: [
@@ -43,6 +44,7 @@ import { SceneManagementComponent } from "./light-management/scene-managment/sce
         LightManagementComponent,
         LightManagementInfoComponent,
         SceneManagementComponent,
+        ExpansionPanelComponent
     ],
     providers: [
         { 

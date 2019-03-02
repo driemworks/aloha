@@ -22,7 +22,7 @@ export class AppComponent {
                 private router: Router,
                 private userDataService: UserDataService,
                 private hueService: HueService) {
-        if (true) {
+        if (false) {
             this.store.dispatch(new ReadUserSuccessAction(initialState));
             this.router.navigate(['/home']);
         } else {

@@ -1,5 +1,18 @@
-<ng-template let-group="groupScene">
-    <StackLayout>
-        <Label [text]="group.groupName"></Label>
-    </StackLayout>
-</ng-template>
+<expansion-panel (onTogglePanel)="handleClick()">
+    <header>
+        <Label class="group-name-entry" row="0" col="0" [text]="groupScene.groupName"></Label>
+        <Label class="enabled-scene-name-entry" row="0" col="1" [text]="enabledSceneName"></Label>
+    </header>
+    <content>
+        <StackLayout class="expansion-panel" slide-in slideFrom="top">
+            <ListPicker [items]="scenes" [selectedIndex]="selectedScene" (selectedIndexChange)="selectedIndexChange($event)" class="p-15"></ListPicker>
+        </StackLayout>
+        <div>
+            <GridLayout rows="auto" columns="auto, auto, auto">
+                <Label (tap)="cancelChange()" row="0" col="0" text="&#xf55a;" class="fa-solid fa-10x cancel btn"></Label>
+                <Switch [(ngModel)]="checked" (checkedChange)="onChange($event)" class="middle-switch" row="0" col="1"></Switch>
+                <Label (tap)="saveChange()" row="0" col="2" text="&#xf058;" class="fa fa-10x save btn"></Label>
+            </GridLayout>
+        </div>
+    </content>
+</expansion-panel>

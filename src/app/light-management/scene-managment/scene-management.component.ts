@@ -40,13 +40,11 @@ export class SceneManagementComponent implements OnInit {
 	}
 
 	saveChange() {
-		console.log('selected scene ' + this.selectedScene);
 		// if the user has not set up any group states, init the array
 		if (!this.user.groupStates) {
-			console.log('the group states were null');
 			this.user.groupStates = [];
 		}
-		let oldUser = Object.assign({}, this.user); 
+		// let oldUser = Object.assign({}, this.user); 
 		this.groupScene.scenes.forEach(scene => {
 			if (JSON.stringify(this.selectedScene) === JSON.stringify(scene.name)) {
 				let sceneId = scene.id;
@@ -64,14 +62,13 @@ export class SceneManagementComponent implements OnInit {
 					if (index > -1) {
 						// a group was already configured, so removed existing configuration
 						this.user.groupStates.splice(index, 1);
-						console.log('Splicing old configuration ' + JSON.stringify(this.user.groupStates));
 					}
 					// push new group state
 					this.user.groupStates.push(groupState);
-					console.log('Pushed new group state ' + JSON.stringify(this.user.groupStates));
 				}
 			}
 		});
+		// need to turn off all lights first
 		// update lights with new group states
 		this.store.dispatch(new UpdateLightStateAction(this.user, true, true));
 		// persist new group states
@@ -81,7 +78,6 @@ export class SceneManagementComponent implements OnInit {
 	}	
 
 	cancelChange() {
-		console.log('canceling, but you had selected index ' + JSON.stringify(this.selectedScene));
 		this.reset();
 	}
 
@@ -92,7 +88,6 @@ export class SceneManagementComponent implements OnInit {
 	}
 
 	handleClick() {
-		console.log('Enabled scene: ' + JSON.stringify(this.enabledSceneName));
 		// this.showPanel = !this.showPanel;
 		if (this.showPanel) {
 			// if we are showing the panel, focus on the first item
@@ -122,10 +117,7 @@ export class SceneManagementComponent implements OnInit {
 		if (index >= 0) {
 			this.selectedScene = this.scenes[index];
 			//  we have to loop over the group scenes and see if we find a match
-			console.log('The enabled scene name is: ' + this.enabledSceneName);
-			console.log('The selected scene is: ' + this.selectedScene);
 			if (this.enabledSceneName === this.selectedScene) {
-				console.log('checking the switch');
 				this.checked = true;
 			} else {
 				this.checked = false;
@@ -134,6 +126,10 @@ export class SceneManagementComponent implements OnInit {
 		this.sceneChanged = true;
 	}
 
+	/**
+	 * Handles the switch on change change
+	 * @param args 
+	 */
 	onChange(args) {
 		this.checked = args.object.checked;
 		var isEnabled = this.selectedScene === this.enabledSceneName;

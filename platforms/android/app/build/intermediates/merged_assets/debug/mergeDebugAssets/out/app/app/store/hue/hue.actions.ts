@@ -29,7 +29,7 @@ export class GetLightStateSuccessAction implements Action {
 
 export class UpdateLightStateAction implements Action {
     readonly type = UPDATE_LIGHT_STATE;
-    constructor(public user: User, public isWifiConnection: boolean) {}
+    constructor(public user: User, public isWifiConnection: boolean, public turnOn: boolean) {}
 }
 
 export class UpdateLightStateSuccessAction implements Action {

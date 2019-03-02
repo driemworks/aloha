@@ -21,7 +21,7 @@ import { ObservableArray } from 'tns-core-modules/data/observable-array/observab
 
 export class LightManagementComponent implements OnInit {
 
-	private user: User;
+	@Input() user: User;
 	groupScenes = new Map();
 	editMode: boolean = false;
 	obserableGroupScenes: ObservableArray<any>;
@@ -31,9 +31,6 @@ export class LightManagementComponent implements OnInit {
 	constructor(private store: Store<AppState>,
 				private hueService: HueService) { 
 		// this.obserableGroupScenes = new ObservableArray();
-		this.store.select((state: any) => state.appState.user).subscribe(user => {
-			this.user = user;
-		});
 		
 		let mockScene: Scene = {
 			name: 'test scene name',
@@ -45,7 +42,12 @@ export class LightManagementComponent implements OnInit {
 			id: "adfakif39vnsfg",
 			enableOnHome: false
 		}
-		// this.scenes[0] = mockScene;
+		let noScene: Scene = {
+			name: '',
+			id: '',
+			enableOnHome: false
+		};
+		
 		// this.scenes[1] = anotherMock;
 	}
 	

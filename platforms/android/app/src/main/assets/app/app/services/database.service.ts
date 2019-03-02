@@ -1,21 +1,24 @@
 import { Injectable } from "@angular/core";
-import { User, initialState } from "../models/user.model";
+import { User } from "../models/user.model";
 import { HttpClient } from "@angular/common/http";
-import { map } from "rxjs/operators";
-import { of } from "rxjs";
-var Sqlite = require("nativescript-sqlite");
+import properties from '../../resources/properties.json';
 
 @Injectable()
 export class UserDataService {
 
-    url = "https://users-1f06.restdb.io/rest/userdata";
-    apiKey = '0caf33b16b7d17ee84d259335dbdceb33ae0b';
+    url: string;
+    apiKey: string;
     _headers = {
         "content-type": "application/json",
         "x-apikey": this.apiKey,
         "cache-control": "no-cache"
     };
-    constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient) {
+        console.log(JSON.stringify(properties));
+        this.apiKey = properties["restdb"]["apiKey"];
+        let table = properties["restdb"]["tables"]["users"];
+        this.url = "https://" + JSON.stringify(table) + ".restdb.io/rest/userdata";
+    }
 
     writeUser(user: User)  {
         return this.modifyUser(user, this.url);

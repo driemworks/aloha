@@ -1,4 +1,8 @@
 {
-    "mockLogin": true,
-    "mockScenes": true
+	"restdb": {
+		"apiKey": "0caf33b16b7d17ee84d259335dbdceb33ae0b",
+		"tables": {
+			"users": "users-1f06"
+		}
+	}
 }

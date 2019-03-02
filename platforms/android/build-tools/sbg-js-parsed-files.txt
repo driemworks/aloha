@@ -1,6 +1,8 @@
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\app.component.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\app.module.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\app.routing.js
+D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\expansion-panel\expansion-panel.component.js
+D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\expansion-panel\expansion-panel.component.spec.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\home\home.component.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\home\home.component.spec.js
 D:\work\aloha\aloha\platforms\android\app\src\main\assets\app\app\light-management\light-management-info\light-management-info.component.js
