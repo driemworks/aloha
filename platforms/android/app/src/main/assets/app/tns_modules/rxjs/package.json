@@ -108,7 +108,7 @@
     "husky": "0.14.3",
     "klaw-sync": "3.0.2",
     "lint-staged": "7.1.1",
-    "lodash": "4.17.5",
+    "lodash": "4.17.23",
     "markdown-doctest": "0.9.1",
     "minimist": "1.2.0",
     "mkdirp": "0.5.1",
